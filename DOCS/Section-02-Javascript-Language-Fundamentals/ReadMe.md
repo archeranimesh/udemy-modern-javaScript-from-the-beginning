@@ -87,3 +87,92 @@ console.time("Hello");
     console.log([1,2,3,4]);
 console.timeEnd("Hello");
 ```
+
+## Variables - var, let & const ##
+
+`var` is the traditional way of declaring variable. We will study it for historical reason. We will use `let` in the code.
+
+### String Variable ###
+
+A string variable can be assigned like this.
+* `var name = "John Doe";`
+
+You can also reassign the variable like this.
+* `name = "Steve smith";`
+
+We can use both `""` double quotes and `''` single quotes for string literals. You should not mix the quotes.
+
+### variable intialization ###
+
+When we do not give a value for initialization to a variable, it is initialized with `undefined`.
+
+* `var greetings; // sets it to undefined`
+
+### Naming Convention ###
+
+Variables names can have alphanumeric character and 2 special characters, `_` and `$`.
+
+Variable names should not start with numbers, like `1name`, it will throw a `SyntaxError`.
+
+Variables name can start with `$`, but it should be avoided, as lot of 3rd party libraries also use it, like this.
+
+* `var $name = "John Doe";`
+
+`_` also should be avoided at the begining of the variable names. It is preferred to be used with private variables. It can be used like this,
+
+* `var _name = "Jane Doe";`
+
+#### MultiWord Variable ####
+
+The most preferred way to declare multiword variables in JavaScript is camelCase, like this, `firstName`.
+
+There are other ways to declare variables.
+
+* underscore - `first_name`
+* Pascal Case - `FirstName`
+* lower case - `firstname`, should be avoided.
+
+### `let` Variables ###
+
+`let` is very similar to `var` in all sense. 
+
+We can create variable's very similar to `var`, like this.
+
+* `let letName = "John Doe";`
+
+We can also reassign the variable like this
+
+* `letName = "Steve smith";`
+
+`undefined` variable is created by not initilizing the variable.
+* `var letGreetings;`
+
+### `const` Variable ###
+`const` is a way to define a constant in JavaScript. This means we cannot reassign the variable.
+
+We can initialize a `const` like this.
+* `const constName = "John Doe";`
+
+If you try reassign the variable `constName`, it throws an exception, `Uncaught TypeError: invalid assignment to const 'constName'`.
+
+We can change `const` objects and arrarys like this.
+
+```javascript
+const person = {
+    name: "John",
+    age: 32
+};
+person.name = "Jane";
+person.age = 41;
+
+const newArray = [1,2,3,4,5];
+newArray.push(6);
+```
+
+We cannot do reassignment of the object or array like this.
+
+```javascript
+const newArray = [1,2,3,4,5]
+newArray = [4,5,6];
+// Uncaught TypeError: invalid assignment to const 'newArray'
+```
