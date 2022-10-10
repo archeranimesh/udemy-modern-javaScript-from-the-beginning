@@ -76,7 +76,7 @@ Logs can also be cleared from the console using a `.clear()` function like this.
 console.clear();
 ```
 
-If you want to measure the time of a block of code, you can do it using the `.time()` * `.timeEnd()` function. 
+If you want to measure the time of a block of code, you can do it using the `.time()` & `.timeEnd()` function. 
 
 ```javascript
 console.time("Hello");
