@@ -1,84 +1,44 @@
-// Define Variables using, var, let, const
+// String
+const name = "John Doe";
+console.log(typeof name)
 
-var name = "John Doe";  //String can be single quote or double quote.
-console.log(name);
-// Reassign
-name = "Steve smith";
-console.log(name);
+// Numbers
+const age = 40;
+console.log(typeof age);
 
-// init variable
-var greetings; // sets it to undefined
-console.log(greetings);
-greetings = "Hello!";
-console.log(greetings);
+// Number as String
+const ageAgain = "40";
+console.log(typeof ageAgain);
 
-// Naming Convention
-// letters, numbers, $, _
+// Boolean
+const hasKids = true;
+console.log(typeof hasKids);
 
-// can't start with numbers
-// var 1name = "name"; // Uncaught SyntaxError: identifier starts immediately after numeric literal
+// Null - https://stackoverflow.com/questions/18808226/why-is-typeof-null-object
+const car = null;
+console.log(typeof car); // It should not return object, but it is a bug in js.
 
-// can use $ or _ at the begining. But not recommended because of some external lib, like jQuery.
-// _ is used in private variables.
-var $name = "John Doe";
-console.log($name);
-var _name = "Jane Doe";
-console.log(_name);
+// undefined
+let test;
+console.log(typeof test);
 
-// MultiWord Variable
-var firstName = "John"; // camelCase
-var first_name = "Sara"; // underscore case
-var FirstName = "Tome"; // Pascal Case
-var firstname = "Jane"; // should be avoided.
+// Symbol
+const sym = Symbol();
+console.log(typeof sym);
 
-// let works similar to var.
-console.warn("LET examples");
-let letName = "John Doe";  //String can be single quote or double quote.
-console.log(letName);
-// Reassign
-letName = "Steve smith";
-console.log(letName);
+// Reference Types - Objects
+// Array
+const numbers = [1,2,3,4];
+console.log(typeof numbers);
 
-// undefined variable
-var letGreetings; // sets it to undefined
-console.log(letGreetings);
-letGreetings = "Hello!";
-console.log(letGreetings);
-
-// const
-console.warn("const examples");
-const constName = "John Doe";
-console.log(constName);
-// constName = "sara"; // Uncaught TypeError: invalid assignment to const 'constName'
-constName[0] = "x"; // Does not throw's error, but do not change anything.
-console.log(constName);
-
-// const variable should have assignment.
-// const newName; //Uncaught SyntaxError: missing = in const declaration
-
-// const with object
-const person = {
-    name: "John",
-    age: 32
+// Objects
+const address = {
+    city: "Boston",
+    state: "MA"
 };
-console.log(person)
-// The assignement of variable is allowed, though it is const
-person.name = "Jane";
-person.age = 41;
-console.log(person)
+console.log(typeof address);
 
-anotherPerson = {
-    name: "Steve",
-    age: 32
-}
-console.log(anotherPerson);
-// person = anotherPerson; //Uncaught TypeError: invalid assignment to const 'person'
-
-const newArray = [1,2,3,4,5]
-console.log(newArray);
-newArray.push(6);
-console.log(newArray);
-newArray[6] = 7;
-console.log(newArray);
-
-// newArray = [4,5,6]; // Uncaught TypeError: invalid assignment to const 'newArray'
+// Date.
+const today = new Date();
+console.log(today);
+console.log(typeof today);

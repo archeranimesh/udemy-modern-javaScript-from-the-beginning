@@ -176,3 +176,100 @@ const newArray = [1,2,3,4,5]
 newArray = [4,5,6];
 // Uncaught TypeError: invalid assignment to const 'newArray'
 ```
+
+## Data types in JavaScript ##
+
+Two types of Data Types:- 
+
+* Primitive Data Type
+    * Stored directly on the location the variables accesses.
+    * Stored on the Stack.
+* Reference Data Type
+    * Data is actually stored on a Heap.
+    * A reference (pointer) is provided to the variable to access the variable.
+
+
+### Primitive Data Type ###
+
+The different primitive data types are.
+* String - All string literals, in `''` or `""`.
+
+```JavaScript
+// String
+const name = "John Doe";
+console.log(typeof name)
+```
+* Number - Decimal, whole number, all are Numbers data type in JS.
+```JavaScript
+// Numbers
+const age = 40;
+console.log(typeof age); // Prints Number
+```
+```JavaScript
+// Numbers
+const age = "40";
+console.log(typeof age); // Prints String
+```
+
+* Boolean - `True` & `False`.
+```JavaScript
+// Boolean
+const hasKids = true;
+console.log(typeof hasKids);
+```
+
+* Null - Empty Value.
+```JavaScript
+// Null - https://stackoverflow.com/questions/18808226/why-is-typeof-null-object
+const car = null;
+console.log(typeof car); // It should not return object, but it is a bug in js.
+```
+
+* Undefined - When a variable is declared but not assigned a value.
+```JavaScript
+// undefined
+let test;
+console.log(typeof test);
+```
+* Sumbols (ES6) - New entry in ES6.
+```JavaScript
+// Symbol
+const sym = Symbol();
+console.log(typeof sym);
+```
+
+### Reference Types ###
+
+The various reference types are:-
+* arrays
+```JavaScript
+// Array
+const numbers = [1,2,3,4];
+console.log(typeof numbers);
+```
+* Object Literals
+```JavaScript
+// Objects
+const address = {
+    city: "Boston",
+    state: "MA"
+};
+console.log(typeof address);
+```
+
+* Functions
+* Dates.
+```JavaScript
+// Date.
+const today = new Date();
+console.log(today);
+console.log(typeof today);
+```
+
+### Dynamically Typed Language ###
+
+Javascript is a Dynamically typed language, which means, if a variables holds an Arrary, and some other point the same variable can hold a string. 
+
+Type is not specified while creation of the variables. The values have types not the variables. 
+
+TypeScript, Flow are some superset of JS which allows Static
