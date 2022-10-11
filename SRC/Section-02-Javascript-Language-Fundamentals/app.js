@@ -1,44 +1,50 @@
-// String
-const name = "John Doe";
-console.log(typeof name)
+let val;
 
-// Numbers
-const age = 40;
-console.log(typeof age);
+// Number to string
+    val = String(5);
+    val = String(4+4);
 
-// Number as String
-const ageAgain = "40";
-console.log(typeof ageAgain);
+    // Bool to string
+    val = String(true);
 
-// Boolean
-const hasKids = true;
-console.log(typeof hasKids);
+    // Date to String
+    val = String(new Date());
 
-// Null - https://stackoverflow.com/questions/18808226/why-is-typeof-null-object
-const car = null;
-console.log(typeof car); // It should not return object, but it is a bug in js.
+    // Arrary to String
+    val = String([1,2,3,4]);
 
-// undefined
-let test;
-console.log(typeof test);
+    // toString
+    val = (5).toString();
+    val = (true).toString();
 
-// Symbol
-const sym = Symbol();
-console.log(typeof sym);
+// String to Number.
+val = Number("5");
+val = Number(true);     // 1
+val = Number(false);    // 0
+val = Number(null);     // 0
+val = Number("hello");  // NaN, when the value cannot be converted.
+val = Number([1,2,3,4,5]);  // NaN, when the value cannot be converted.
 
-// Reference Types - Objects
-// Array
-const numbers = [1,2,3,4];
-console.log(typeof numbers);
 
-// Objects
-const address = {
-    city: "Boston",
-    state: "MA"
-};
-console.log(typeof address);
+// parseInt()
+val = parseInt("100");  // 100
+val = parseInt("100.50"); // still 100
+val = parseFloat("100.50"); // 100.5
 
-// Date.
-const today = new Date();
-console.log(today);
-console.log(typeof today);
+
+
+// output
+console.log(val);
+console.log(typeof val);
+// console.log(val.length); // Works on String
+console.log(val.toFixed());
+
+
+// Type coercion
+
+const val1 = String(5);
+const val2 = 4;
+const sum = val1 + val2;
+
+console.log(sum);
+console.log(typeof sum);    // 56, it converted to string.

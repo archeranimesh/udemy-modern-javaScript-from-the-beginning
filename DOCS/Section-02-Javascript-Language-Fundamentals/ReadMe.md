@@ -273,3 +273,137 @@ Javascript is a Dynamically typed language, which means, if a variables holds an
 Type is not specified while creation of the variables. The values have types not the variables. 
 
 TypeScript, Flow are some superset of JS which allows Static
+
+## Type Conversion ##
+We can convert the type of variable while execution.
+
+### Number, Bool, Date, Array To String ###
+
+* Numbers along with Boolean, Date, and Array can be converted to string, by using `String()` or `.toString()` function.
+
+* Numbers
+```javascript
+val = String(5);
+val = String(4+4);
+val = (5).toString();
+
+// Output
+console.log(val);
+console.log(typeof val);
+console.log(val.length); // Works on String
+```
+
+* Boolean
+```javascript
+val = String(true);
+val = (true).toString();
+
+// Output
+console.log(val); // true is printed.
+console.log(typeof val);
+console.log(val.length); // Works on String
+```
+
+* Date 
+```javascript
+val = String(new Date());
+
+// Output
+console.log(val); // Complete date is converted to string.
+console.log(typeof val);
+console.log(val.length); // Works on String
+```
+
+* Arrary
+```javascript
+val = String([1,2,3,4]);
+
+// Output
+console.log(val); // The array is converted to string, with the ,
+console.log(typeof val);
+console.log(val.length); // Works on String
+```
+
+### String, Boolean, `null`, Arrary to Numbers ###
+
+We can use the `Numbers()` and `parseInt()` funtion to convert Strings, Boolean, `null` to Numbers.
+
+* Strings.
+```javascript
+val = Number("5");
+
+// Output
+console.log(val); // 5
+console.log(typeof val);
+console.log(val.toFixed()); // Works on Numbers
+```
+* Boolean.
+```javascript
+val = Number(true); 
+
+// Output
+console.log(val); // 1, true prints 1, False prints 0
+console.log(typeof val);
+console.log(val.toFixed()); // Works on Numbers
+```
+
+* `null`
+```javascript
+val = Number(null);
+
+// Output
+console.log(val); // 0,
+console.log(typeof val);
+console.log(val.toFixed()); // Works on Numbers
+```
+
+* Strings and arrays, which cannot be converted give `NaN`, Not a Number value.
+```javascript
+val = Number("hello");      // NaN, when the value cannot be converted.
+val = Number([1,2,3,4,5]);  // NaN, when the value cannot be converted.
+
+// Output
+console.log(val); // 0,
+console.log(typeof val);
+console.log(val.toFixed()); // Works on Numbers
+```
+
+### `parseInt()` and `parseFloat` ###
+* If we want to extract the Integer part or the complete floating value from a string we can use these function.
+
+* `parseInt()`, As you see below even for `"100.50"` it will return `100`. The integer part.
+
+```javascript
+val = parseInt("100");  // 100
+val = parseInt("100.50"); // still 100
+
+// Output
+console.log(val); // 100
+console.log(typeof val);
+console.log(val.toFixed()); // Works on Numbers
+```
+
+* `parseFloat()` : It will return the proper floating part also.
+```javascript
+val = parseFloat("100.50"); // 100.5
+
+// Output
+console.log(val); // 100.5
+console.log(typeof val);
+console.log(val.toFixed()); // Works on Numbers
+```
+
+### Type coercion ###
+
+When 2 different types are used in a equation, one of the type is converted to another one, this is called Type coercion.
+
+```javascript
+const val1 = String(5);
+const val2 = 4;
+const sum = val1 + val2;
+
+console.log(sum);
+console.log(typeof sum);    // 54, it converted to string.
+```
+
+In the above case, the equation gives `54` in place of `9`, as one of the operand was string.
