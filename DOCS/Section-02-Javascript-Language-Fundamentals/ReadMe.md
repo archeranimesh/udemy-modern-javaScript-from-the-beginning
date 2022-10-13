@@ -407,3 +407,28 @@ console.log(typeof sum);    // 54, it converted to string.
 ```
 
 In the above case, the equation gives `54` in place of `9`, as one of the operand was string.
+
+## Numbers & `Math` Object ##
+
+We need to many times perform mathematical operations, as in all languages even JavaScript also supports this. The most popular operations are
+
+* Addition : `100 + 60` 
+* Substraction : `100 - 60`
+* Multiplication : `100 * 60`
+* Division : `100 / 60`
+* Modulo : `100 / 60`
+
+We also have a `Math` object with very helpful functions and constants.
+
+* PI : `Math.PI`, returns the value of Pi.
+* `.round()` : `Math.round(2.4);` gives 2 but `Math.round(2.8);` gives 3.
+* `.ceil()` : `Math.ceil(2.4);` gives 3, it returns the upper bound.
+* `.floor()` : `Math.floor(2.8);` gives 2, it returns the lower bound.
+* `.sqrt()` : `Math.sqrt(64);` gives 8, the square root of `64`.
+* `.abs()` : `Math.abs(-3);`, gives 3, the absolute value.
+* `.pow()` : `Math.pow(8,2);`, gives `64`, `8` raised to `2`.
+* `.min()` : `Math.min(1,2,3,4);`, gives `1`, the minimum number.
+* `.max()` : `Math.max(1,2,3,4);`, gives `4`, the maximum number.
+* `.random()` : `Math.random();`, gives any random number between `0` to `1`.
+* Random number between 2 numbers.
+    * `Math.floor((Math.random() * 20) + 1 )` 

@@ -25,6 +25,7 @@ val = Math.max(1,2,3,4);    // 4
 val = Math.random();        // number between 0 and 1
 val = Math.floor((Math.random() * 20) + 1 );      // random no between 1-20
 
+
 // output
 console.log(val);
 console.log(typeof val);
