@@ -432,3 +432,97 @@ We also have a `Math` object with very helpful functions and constants.
 * `.random()` : `Math.random();`, gives any random number between `0` to `1`.
 * Random number between 2 numbers.
     * `Math.floor((Math.random() * 20) + 1 )` 
+
+## String Method & Concatenation ##
+String and its method are very important in the whole JavaScript language as a lot of time we deai with String.
+
+The first operation we do with Strings is **Concatenation**.
+
+### Concatenation ###
+This adds to string together.
+```javascript
+const firstName = "John";
+const lastName = "Doe";
+val = firstName + " " +lastName;    
+console.log(val);       //John Doe
+```
+
+We can also append using the `+=` operator.
+```javascript
+val = "John ";
+val += "Doe" 
+console.log(val);       //John Doe
+```
+
+
+
+### Escape ###
+
+Lot of time in a String, we want to change the default meaning of the symbol. Like `'` is used to enclose a string. Now how do we show the characters like `'s` in a string. We escape the symbol by using `\`.
+
+```javascript
+val = 'That\'s awesome, I can\'t wait';     
+console.log(val); //// That's awesome, I can't wait
+```
+
+### String Property & Methods ###
+* Length : `"John".length` returns 4, the length string.
+* concatenate : 
+```javascript
+const firstName = "John";
+const lastName = "Doe";
+val = firstName.concat(" ", lastName);
+console.log(val);       //John Doe
+```
+* Change Case, we can change the complete string to upper case or lower case.
+```javascript
+const firstName = "John";
+// change case.
+val = firstName.toUpperCase();  // JOHN
+val = firstName.toLowerCase();  // john
+```
+* String as Array, we can get string at a particular index.
+```javascript
+const firstName = "John";
+val = firstName[0];     // J
+```
+
+* indexOf : `"John".indexOf(n)` returns 3, the index where the literal is present.
+    * if two character are same in a string like `l` in `"william"`, `indexOf` will return the first index.
+    * to get the last index we have to use, `lastIndexOf()`.
+
+* chaeAt() : `"John".charAt(2)`, return `h`, the character at `2`nd index.
+    * we can also use `charAt()` to get the last literal in the string like this, `John".charAt(John".length - 1);`
+    * we can also use `slice(-1)` to get the last literal in the string.
+
+* substring() : we can get a part of the string using `substring()` 
+```javascript
+const firstName = "John";
+val = firstName.substring(0,2); // Jo, 2 is not included.
+```
+
+* slice() : it also does same job as `substring()` but also handles `-` indexes.
+```javascript
+const firstName = "John";
+val = firstName.slice(0,2);     // Jo
+val = firstName.slice(-3);      // ohn
+```
+
+* split : we cans split a string into array based on a delimiter.
+```javascript
+const str = "hello my name is John Doe."
+val = str.split(" ");       // [ "hello", "my", "name", "is", "John", "Doe." ]
+```
+
+* replace : we can search and replace a character.
+```javascript
+const str = "hello my name is John Doe."
+val = str.replace("John", "Jane");
+console.log(val);       // "hello my name is Jane Doe."
+```
+
+* includes : checks is a string is available in a string
+```javascript
+const str = "hello my name is John Doe."
+val = str.includes("hello");    // true
+```
