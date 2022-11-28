@@ -231,7 +231,7 @@ console.log(typeof car); // It should not return object, but it is a bug in js.
 let test;
 console.log(typeof test);
 ```
-* Sumbols (ES6) - New entry in ES6.
+* Symbols (ES6) - New entry in ES6.
 ```JavaScript
 // Symbol
 const sym = Symbol();
@@ -416,7 +416,7 @@ We need to many times perform mathematical operations, as in all languages even 
 * Substraction : `100 - 60`
 * Multiplication : `100 * 60`
 * Division : `100 / 60`
-* Modulo : `100 / 60`
+* Modulo : `100 % 60`
 
 We also have a `Math` object with very helpful functions and constants.
 
@@ -491,7 +491,7 @@ val = firstName[0];     // J
     * if two character are same in a string like `l` in `"william"`, `indexOf` will return the first index.
     * to get the last index we have to use, `lastIndexOf()`.
 
-* chaeAt() : `"John".charAt(2)`, return `h`, the character at `2`nd index.
+* charAt() : `"John".charAt(2)`, return `h`, the character at `2`nd index.
     * we can also use `charAt()` to get the last literal in the string like this, `John".charAt(John".length - 1);`
     * we can also use `slice(-1)` to get the last literal in the string.
 
@@ -526,3 +526,46 @@ console.log(val);       // "hello my name is Jane Doe."
 const str = "hello my name is John Doe."
 val = str.includes("hello");    // true
 ```
+
+## Template Literals ##
+
+Inserting HTML from Javascript is little difficult and error prone, as we edit raw HTML text. This is how it looks before ES6
+
+```javascript
+// without template string
+html = "<ul><li> Name: " + name +" </li><li> Age: " + age +"</li> <li> Job: " + job +" </li> <li> City: " + city +" </li> </ul>"
+
+// or, with better formatting.
+// without template string
+html = "<ul>" +
+    "<li> Name: " + name +" </li> "+ 
+    "<li> Age: " + age +"</li> "+ 
+    "<li> Job: " + job +" </li> "+
+    "<li> City: " + city +" </li> "+ 
+"</ul>"
+```
+
+Even with proper formatting, the above is error prone. We have solution in ES6, by doing this.
+
+```javascript
+html = `
+    <ul>
+        <li>Name: ${name} </li>
+        <li>Age: ${age} </li>
+        <li>Job: ${job} </li>
+        <li>City: ${city} </li>
+    </ul?
+`;
+
+document.body.innerHTML = html;
+```
+
+The above is called **String Literal**. We can intialize a String literal using ```` symbol.
+
+The variable we want to reference can be accessed using the `${}` token, like `${name}`.
+
+We can also put expression inside `${}` token, like, `${2+2}` and it will evaluate to `4`.
+
+Function can also be invoked from `${}` token, like `${hello()}` and it will replace with whatever value the function returns.
+
+We can also have ternary operation, like `${age > 30 ? "Over 30" : "Under 30"}`.
